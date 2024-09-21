@@ -1,3 +1,4 @@
+import MenuLink from "./menuLink/menuLink";
 import styles from "./sidebar.module.css"
 import {
     MdDashboard,
@@ -76,12 +77,32 @@ const menuItems = [
             }
         ]
     }
-
 ]
+
+
 const Sidebar = () => {
     return (
-        <div className={styles.container}>Sidebar</div>
+        <div className={styles.container}>
+            <ul>
+                {/* วนลูปแสดงเมนูหลักแต่ละรายการจาก menuItems */}
+                {menuItems.map((cat) => (
+                    // สร้างรายการ li สำหรับเมนูหลัก โดยใช้ title ของเมนูเป็น key
+                    <li key={cat.title}>
+                        {/* แสดงชื่อเมนูหลัก */}
+                        <span className={styles.cat}>{cat.title}</span>
+
+                        {/* วนลูปแสดงเมนูย่อยแต่ละรายการจาก cat.list */}
+                        {cat.list.map(item => (
+                            // แสดงรายการเมนูย่อย โดยใช้คอมโพเนนต์ MenuLink
+                            <MenuLink item={item} key={item.title} />
+                        ))}
+                    </li>
+                ))}
+            </ul>
+        </div >
     )
 }
+
+
 
 export default Sidebar
