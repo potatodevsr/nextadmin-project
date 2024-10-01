@@ -1,5 +1,6 @@
 import MenuLink from "./menuLink/menuLink";
 import styles from "./sidebar.module.css"
+import Image from "next/image";
 import {
     MdDashboard,
     MdSupervisedUserCircle,
@@ -83,6 +84,13 @@ const menuItems = [
 const Sidebar = () => {
     return (
         <div className={styles.container}>
+            <div className={styles.user}>
+                <Image src="/noavatar.png" alt="" width="50" height="50" />
+            </div>
+            <div className={styles.userDetail}>
+                <span className={styles.username}>Chadapohn Sorakanit</span>
+                <span className={styles.userTitle}>Programmer</span>
+            </div>
             <ul>
                 {/* วนลูปแสดงเมนูหลักแต่ละรายการจาก menuItems */}
                 {menuItems.map((cat) => (
@@ -102,7 +110,6 @@ const Sidebar = () => {
         </div >
     )
 }
-
 
 
 export default Sidebar
