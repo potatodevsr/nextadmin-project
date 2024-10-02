@@ -85,13 +85,13 @@ const Sidebar = () => {
     return (
         <div className={styles.container}>
             <div className={styles.user}>
-                <Image src="/noavatar.png" alt="" width="50" height="50" />
+                <Image className={styles.userImage} src="/noavatar.png" alt="" width="50" height="50" />
+                <div className={styles.userDetail}>
+                    <span className={styles.username}>Chadapohn Sorakanit</span>
+                    <span className={styles.userTitle}>Programmer</span>
+                </div>
             </div>
-            <div className={styles.userDetail}>
-                <span className={styles.username}>Chadapohn Sorakanit</span>
-                <span className={styles.userTitle}>Programmer</span>
-            </div>
-            <ul>
+            <ul className={styles.list}>
                 {/* วนลูปแสดงเมนูหลักแต่ละรายการจาก menuItems */}
                 {menuItems.map((cat) => (
                     // สร้างรายการ li สำหรับเมนูหลัก โดยใช้ title ของเมนูเป็น key
