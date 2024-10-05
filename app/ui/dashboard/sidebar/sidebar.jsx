@@ -11,7 +11,7 @@ import {
     MdPeople,
     MdOutlineSettings,
     MdHelpCenter,
-    MdLogout,
+    // MdLogout,
 }
     from "react-icons/md";
 
@@ -80,12 +80,11 @@ const menuItems = [
     }
 ]
 
-
 const Sidebar = () => {
     return (
         <div className={styles.container}>
             <div className={styles.user}>
-                <Image className={styles.userImage} src="/noavatar.png" alt="" width="50" height="50" />
+                <Image className={styles.userImage} src="/chada-profile.png" alt="" width="50" height="50" />
                 <div className={styles.userDetail}>
                     <span className={styles.username}>Chadapohn Sorakanit</span>
                     <span className={styles.userTitle}>Programmer</span>
