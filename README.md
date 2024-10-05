@@ -55,3 +55,5 @@ ui
 
 สร้าง layout.jsx และทดลองการแสดงผล h1 ใน layout.js
 import Navbar, Sidebar เพื่อใช้ {children} ใน layout.jsx
+
+9
