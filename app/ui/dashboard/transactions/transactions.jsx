@@ -6,7 +6,7 @@ const Transactions = () => {
             <h2 className={styles.title}>Latest Transactions</h2>
             <table className={styles.table}>
                 <thead>
-                    <tr >
+                    <tr>
                         <td>Name</td>
                         <td>Status</td>
                         <td>Date</td>
