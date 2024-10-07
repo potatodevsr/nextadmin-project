@@ -1,6 +1,5 @@
 import styles from "./chart.module.css";
 
-
 const Chart = () => {
     return (
         <div className={styles.container}>
@@ -8,3 +7,5 @@ const Chart = () => {
         </div>
     )
 }
+
+export default Chart
