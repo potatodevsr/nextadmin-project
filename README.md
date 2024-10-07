@@ -56,4 +56,5 @@ ui
 สร้าง layout.jsx และทดลองการแสดงผล h1 ใน layout.js
 import Navbar, Sidebar เพื่อใช้ {children} ใน layout.jsx
 
-9
+ติดตั้ง npm i recharts@2.9.0
+มาจาก https://recharts.org/en-US/
