@@ -7,7 +7,7 @@ const SigleProductPage = () => {
                 <div className={styles.imgContainer}>
                     <Image src="/products/iphone.png" alt="" fill />
                 </div>
-                Chadapohn Sorakanit
+                Iphone
             </div>
 
             <div className={styles.formContainer}>

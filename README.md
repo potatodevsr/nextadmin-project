@@ -58,3 +58,12 @@ import Navbar, Sidebar เพื่อใช้ {children} ใน layout.jsx
 
 ติดตั้ง npm i recharts@2.9.0
 มาจาก https://recharts.org/en-US/
+
+
+เชื่อม database 
+ npm i mongoose
+ -- สร้าง Folder lip -> ไฟล์ utils.js เชื่อฐานข้อมูล
+
+ สร้าง Folder .env ใส่ mongodb+srv://chadapohnDev:chadapohnDev@cluster0.p99m9.mongodb.net/dashboard?retryWrites=true&w=majority&appName=Cluster0' ที่ตอนแรกมาจาก utils.js ใน  const db = await mongoose.connect
+
+สร้าง File model.js ใน Folder lip
