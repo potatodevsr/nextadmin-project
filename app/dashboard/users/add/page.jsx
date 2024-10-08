@@ -1,4 +1,4 @@
-import styles from "@/app/ui/dashboard/users/addUser.module.css"
+import styles from "@/app/ui/dashboard/users/addUser/addUser.module.css"
 
 
 const AddUser = () => {
@@ -14,9 +14,15 @@ const AddUser = () => {
                     <option value={true}>Yes</option>
                     <option value={false}>No</option>
                 </select>
+
+                <select name="isActive" id="isActive">
+                    <option value={false} selected>Is Active?</option>
+                    <option value={true}>Yes</option>
+                    <option value={false}>No</option>
+                </select>
                 <input type="position" placeholder='position' name='position' />
                 <textarea name="address" id="address" cols="30" rows="16" placeholder='Address' ></textarea>
-                <button type="submit">Submit</button>
+                <button type="submit">Update</button>
             </form>
         </div>
     )
