@@ -65,5 +65,5 @@ import Navbar, Sidebar เพื่อใช้ {children} ใน layout.jsx
  -- สร้าง Folder lip -> ไฟล์ utils.js เชื่อฐานข้อมูล
 
  สร้าง Folder .env ใส่ mongodb+srv://chadapohnDev:chadapohnDev@cluster0.p99m9.mongodb.net/dashboard?retryWrites=true&w=majority&appName=Cluster0' ที่ตอนแรกมาจาก utils.js ใน  const db = await mongoose.connect
-
 สร้าง File model.js ใน Folder lip
+สร้าง File data.js ใน Folder lip
