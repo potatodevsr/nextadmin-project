@@ -28,7 +28,7 @@ const UsersPage = () => {
                     <tr>
                         <td>
                             <div className={styles.user}>
-                                <Image src="/chada-profile.png"
+                                <Image src="/profile_user/chada-profile.png"
                                     alt=""
                                     width={40}
                                     height={40}
@@ -50,10 +50,16 @@ const UsersPage = () => {
                             Active
                         </td>
                         <td>
-                            <Link href="/">
-                                <button className={`${styles.button} ${styles.view}`}></button>
-                            </Link>
-                            <button className={`${styles.button} ${styles.delete}`}></button>
+                            <div className={styles.buttons}>
+                                <Link href="/">
+                                    <button className={`${styles.button} ${styles.view}`}>
+                                        View
+                                    </button>
+                                </Link>
+                                <button className={`${styles.button} ${styles.delete}`}>
+                                    Delete
+                                </button>
+                            </div>
                         </td>
                     </tr>
                 </tbody>
