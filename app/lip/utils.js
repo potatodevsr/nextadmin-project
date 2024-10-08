@@ -10,10 +10,11 @@ export const connectToDB = async () => {
         if (connection.isConnected) return;
         // เชื่อมต่อกับฐานข้อมูล MongoDB ที่รันบน localhost และใช้ฐานข้อมูลชื่อ 'test'
         // Connect to Cluster0
-        const db = await mongoose.connect(ProcessingInstruction.env.MONGO);
+        const db = await mongoose.connect(process.env.MONGO);
         // เก็บสถานะการเชื่อมต่อในตัวแปร connection โดยเข้าถึง connection[0]
-        connection.isConnected = db.connection[0]
+        connection.isConnected = db.connections[0].readyState;
     } catch (error) {
+        console.log(error);
         // ถ้ามีข้อผิดพลาดเกิดขึ้น จะโยน error ออกไป
         throw new (error);
     }

@@ -1,4 +1,4 @@
-import mongoose, { Mongoose } from "mongoose";
+import mongoose from "mongoose";
 
 // userSchema: เป็น schema ที่กำหนดไว้สำหรับ collection ของ user
 const userSchema = new mongoose.Schema(
@@ -85,5 +85,5 @@ const productSchema = new mongoose.Schema(
 );
 
 // ตรวจสอบว่าโมเดล User, Product มีการสร้างไว้แล้วหรือไม่ ถ้ามีอยู่แล้วจะใช้โมเดลที่มีอยู่ ถ้ายังไม่มีจะสร้างโมเดลใหม่โดยใช้ userSchema, productSchema
-export const User = mongoose.model.User || mongoose.model("User", userSchema);
-export const Product = mongoose.model.Product || mongoose.model("Product", productSchema)
+export const User = mongoose.models.User || mongoose.model("User", userSchema);
+export const Product = mongoose.models.Product || mongoose.model("Product", productSchema);
