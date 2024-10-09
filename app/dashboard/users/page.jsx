@@ -7,8 +7,9 @@ import Pagination from "@/app/ui/dashboard/pagination/pagination"
 import { formatDateToThai } from "@/app/lip/utils"
 
 const UsersPage = async ({ searchParams }) => {
-    const q = searchParams?.query || "";
+    const q = searchParams?.q || "";
     const users = await fetchUsers(q)
+    console.log('Debuging searchParams UsersPage 🌍:', q);
     console.log('This is fetchUsers 🌍:', users);
 
     return (
