@@ -5,7 +5,6 @@ import styles from "./search.module.css";
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useDebouncedCallback } from 'use-debounce';
 
-// ประกาศฟังก์ชัน Search ที่รับ props placeholder
 const Search = ({ placeholder }) => {
     const searchParams = useSearchParams(); // รับค่าพารามิเตอร์การค้นหาจาก URL
     const pathname = usePathname(); // ดึง path ของหน้าปัจจุบัน
@@ -15,6 +14,7 @@ const Search = ({ placeholder }) => {
     const handleSearch = useDebouncedCallback((e) => {
         const params = new URLSearchParams(searchParams); // สร้างสำเนาของ searchParams ที่มีอยู่
 
+        params.set("page", 1)
         // ตรวจสอบว่า e.target.value มีค่าและมีความยาวมากกว่า 2 อักขระ
         if (e.target.value) {
             e.target.value.length > 2 && params.set("q", e.target.value); // ตั้งค่าพารามิเตอร์ 'q' ใน URL เป็นค่าที่ค้นหา
