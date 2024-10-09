@@ -75,3 +75,6 @@ install npm i use-debounce@9.0.4
 
  ติดตั้ง @types/react
  npm install --save-dev @types/react @types/react-dom
+
+
+สร้าง File ชื่อ action.js ใน Folder lip
