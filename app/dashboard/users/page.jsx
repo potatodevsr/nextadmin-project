@@ -5,13 +5,14 @@ import Link from "next/link"
 import Image from "next/image"
 import Pagination from "@/app/ui/dashboard/pagination/pagination"
 import { formatDateToThai } from "@/app/lip/utils"
+import { deleteUser } from "@/app/lip/action";
 
 const UsersPage = async ({ searchParams }) => {
     const q = searchParams?.q || "";
     const page = searchParams?.page || 1;
     const { count, users } = await fetchUsers(q, page)
-    console.log('Debuging searchParams UsersPage 🌍:', q);
-    console.log('This is fetchUsers 🌍:', users);
+    // console.log('Debuging searchParams UsersPage 🌍:', q);
+    // console.log('This is fetchUsers 🌍:', users);
 
     return (
         <div className={styles.container}>
@@ -65,9 +66,13 @@ const UsersPage = async ({ searchParams }) => {
                                             View
                                         </button>
                                     </Link>
-                                    <button className={`${styles.button} ${styles.delete}`}>
-                                        Delete
-                                    </button>
+
+                                    <form action={deleteUser}>
+                                        <input type="hidden" name="id" value={user.id} />
+                                        <button className={`${styles.button} ${styles.delete}`}>
+                                            Delete
+                                        </button>
+                                    </form>
                                 </div>
                             </td>
                         </tr>

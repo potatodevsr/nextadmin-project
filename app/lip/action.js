@@ -1,3 +1,5 @@
+"use server";
+
 import { revalidatePath } from "next/cache";
 import { User } from "./model";
 import { connectToDB } from "./utils";
@@ -5,8 +7,6 @@ import { redirect } from "next/navigation";
 import bcrypt from "bcrypt";
 
 export const addUser = async (formData) => {
-    "use server";
-    
     // แปลงข้อมูลจาก formData ที่รับเข้ามาให้อยู่ในรูปแบบของ object
     const { username, email, password, isAdmin, isActive, phone, address } =
         Object.fromEntries(formData);
@@ -37,3 +37,19 @@ export const addUser = async (formData) => {
     // ทำการเปลี่ยนเส้นทาง (redirect) ไปยังหน้ารายชื่อผู้ใช้
     return redirect("/dashboard/users");
 };
+
+export const deleteUser = async (formData) => {
+    // แปลงข้อมูลจาก formData ที่รับเข้ามาให้อยู่ในรูปแบบของ object
+    const { id } = Object.fromEntries(formData);
+    try {
+        connectToDB();
+        await User.findByIdAndDelete(id);
+    } catch (err) {
+        console.log(err);
+        throw new Error("Failed to delete users! 🚫🥲");
+    }
+
+    // ทำการรีเฟรชแคชของเส้นทาง (path) ที่แสดงรายชื่อผู้ใช้ เพื่อให้ข้อมูลที่แสดงเป็นข้อมูลล่าสุด
+    revalidatePath("/dashboard/users");
+};
+

@@ -23,7 +23,6 @@ export const connectToDB = async () => {
 
 export function formatDateToThai(dateString) {
     const date = new Date(dateString);
-    console.log('This is dateString 🌎 ', dateString);
     const day = String(date.getDate()).padStart(2, '0');
     const month = String(date.getMonth() + 1).padStart(2, '0');
     const year = date.getFullYear() + 543; // เพิ่ม 543 เพื่อให้เป็นปี พ.ศ.
