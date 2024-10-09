@@ -9,8 +9,7 @@ const MenuLink = ({ item }) => {
 
     // ดึง path ปัจจุบันของหน้า
     const pathname = usePathname();
-
-    console.log('pathname', pathname);
+    // console.log('pathname', pathname);
 
     return (
         // คอมโพเนนต์ Link ใช้สำหรับสร้างลิงก์ และกำหนด className ให้กับเมนู

@@ -3,7 +3,7 @@ import styles from "@/app/ui/login/login.module.css";
 
 
 const LoginPage = () => {
-    console.log('Debug LoginPage styles', styles);
+    // console.log('Debug LoginPage styles', styles);
 
     return (
         <div className={styles.container} >
