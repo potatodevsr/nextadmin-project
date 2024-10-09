@@ -1,12 +1,14 @@
+import { revalidatePath } from "next/cache";
 import { User } from "./model";
 import { connectToDB } from "./utils";
+import { redirect } from "next/navigation";
 
-export const addUser = async (fromData) => {
-    "use server"
+export const addUser = async (formData) => {
+    "use server";
     const { username, email, password, isAdmin, isActive, phone, address } =
-        Object.fromEntries(fromData);
+        Object.fromEntries(formData);
     try {
-        connectToDB();
+        await connectToDB();
         const newUser = new User({
             username,
             email,
@@ -14,11 +16,15 @@ export const addUser = async (fromData) => {
             isAdmin,
             isActive,
             phone,
-            address
+            address,
         });
         await newUser.save();
     } catch (err) {
         console.log(err);
         throw new Error("Failed to create users! 🚫🥲");
     }
+
+    revalidatePath("/dashboard/users");
+    // ใช้ redirect ที่ถูกต้องตามคำแนะนำ
+    return redirect("/dashboard/users");
 };

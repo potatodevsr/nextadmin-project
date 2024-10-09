@@ -6,7 +6,7 @@ export const fetchUsers = async (q, page) => {
     // สร้างตัวแปร regex ที่เป็น Regular Expression สำหรับการค้นหาที่ไม่คำนึงถึงตัวพิมพ์ใหญ่-เล็ก (case-insensitive)
     const regex = new RegExp(q, "i");
 
-    const ITEM_PER_PAGE = 2; // กำหนดจำนวนรายการต่อหน้า (ในที่นี้คือ 2 รายการต่อหน้า)
+    const ITEM_PER_PAGE = 10; // กำหนดจำนวนรายการต่อหน้า (ในที่นี้คือ 2 รายการต่อหน้า)
 
     try {
         await connectToDB(); // รอการเชื่อมต่อกับฐานข้อมูล
