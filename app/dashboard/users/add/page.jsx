@@ -1,4 +1,4 @@
-import { addUser } from "@/app/lip/action"
+import { addUser } from "@/app/lip/users/action"
 import styles from "@/app/ui/dashboard/users/addUser/addUser.module.css"
 
 const AddUser = () => {

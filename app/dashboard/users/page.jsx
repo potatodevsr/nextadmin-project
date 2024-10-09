@@ -1,11 +1,10 @@
-import { fetchUsers } from "@/app/lip/data"
+import { fetchUsers, deleteUser } from "@/app/lip/users/action"
 import Search from "@/app/ui/dashboard/search/search"
 import styles from "@/app/ui/dashboard/users/users.module.css"
 import Link from "next/link"
 import Image from "next/image"
 import Pagination from "@/app/ui/dashboard/pagination/pagination"
 import { formatDateToThai } from "@/app/lip/utils"
-import { deleteUser } from "@/app/lip/action";
 
 const UsersPage = async ({ searchParams }) => {
     const q = searchParams?.q || "";
@@ -27,7 +26,7 @@ const UsersPage = async ({ searchParams }) => {
                     <tr>
                         <td>Name</td> {/* Use <td> for table headers */}
                         <td>Email</td>
-                        <td>Created At</td>
+                        <td>Update At</td>
                         <td>Role</td>
                         <td>Status</td>
                         <td>Action</td>

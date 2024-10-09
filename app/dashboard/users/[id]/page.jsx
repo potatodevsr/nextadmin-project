@@ -1,49 +1,56 @@
-import styles from "@/app/ui/dashboard/users/sigleUser/sigleUser.module.css"
-import Image from "next/image"
-const SigleUserPage = () => {
+import { fetchUser, updateUser } from "@/app/lip/users/action";
+import styles from "@/app/ui/dashboard/users/sigleUser/sigleUser.module.css";
+import Image from "next/image";
+
+const SigleUserPage = async ({ params }) => {
+    const { id } = params;
+    const user = await fetchUser(id);
+
+    console.log('Debug SigleUserPage 💙:', user);
+
     return (
         <div className={styles.container}>
             <div className={styles.infoContainer}>
                 <div className={styles.imgContainer}>
-                    <Image src="/profile_user/chada-profile.png" alt="" fill />
+                    <Image src={user?.img || "/profile_user/noavatar.png"} alt="" fill />
                 </div>
-                Chadapohn Sorakanit
+                {user.username}
             </div>
 
             <div className={styles.formContainer}>
-                <form action="" className={styles.form}>
+                <form action={updateUser} className={styles.form}>
+                    <input type="hidden" name="id" value={user.id} />
                     <label>Username</label>
-                    <input type="text" name="username" id="" placeholder="username" />
+                    <input type="text" name="username" id="" placeholder={user.username} />
 
                     <label>Email</label>
-                    <input type="email" name="email" id="" placeholder="email" />
+                    <input type="email" name="email" id="" placeholder={user.email} />
 
                     <label>Password</label>
-                    <input type="password" name="password" id="" placeholder="password" />
+                    <input type="password" name="password" id="" placeholder={user.password} />
 
                     <label>Phone</label>
-                    <input type="text" name="Phone" id="" placeholder="+1234567" />
+                    <input type="text" name="phone" id="" placeholder={user.phone} />
 
                     <label>Address</label>
-                    <textarea type="text" name="address" id="" placeholder="address" ></textarea>
+                    <textarea name="address" id="" placeholder={user.address}></textarea>
 
                     <label>Is Admin?</label>
-                    <select name="isAdmin" id="isAdmin">
+                    <select name="isAdmin" id="isAdmin" defaultValue={user.isAdmin}>
                         <option value={true}>Yes</option>
                         <option value={false}>No</option>
                     </select>
 
                     <label>Is Active?</label>
-                    <select name="isActive" id="isActive">
+                    <select name="isActive" id="isActive" defaultValue={user.isActive}>
                         <option value={true}>Yes</option>
                         <option value={false}>No</option>
                     </select>
                     <button>Update</button>
-                </form >
+                </form>
             </div>
-        </div >
-    )
-}
+        </div>
+    );
+};
 
-export default SigleUserPage
-
+export default SigleUserPage;

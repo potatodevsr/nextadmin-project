@@ -20,7 +20,7 @@ const ProductsPage = () => {
                         <td>Title</td> {/* Use <td> for table headers */}
                         <td>Description</td>
                         <td>Price</td>
-                        <td>Created At</td>
+                        <td>Update At</td>
                         <td>Stock</td>
                         <td>Action</td>
                     </tr>
