@@ -67,3 +67,7 @@ import Navbar, Sidebar เพื่อใช้ {children} ใน layout.jsx
  สร้าง Folder .env ใส่ mongodb+srv://chadapohnDev:chadapohnDev@cluster0.p99m9.mongodb.net/dashboard?retryWrites=true&w=majority&appName=Cluster0' ที่ตอนแรกมาจาก utils.js ใน  const db = await mongoose.connect
 สร้าง File model.js ใน Folder lip
 สร้าง File data.js ใน Folder lip
+
+install npm i use-debounce@9.0.4 
+    use-debounce -> ลดจำนวนการเรียกฟังก์ชัน: เมื่อต้องการลดการเรียก API หรือฟังก์ชันบ่อยครั้งเกินไป (เช่น เมื่อผู้ใช้พิมพ์ข้อความในช่องค้นหาและคุณไม่ต้องการเรียก API ทุกครั้งที่พิมพ์) คุณสามารถใช้ use-debounce เพื่อหน่วงเวลาให้เรียกฟังก์ชันเพียงครั้งเดียวหลังจากผู้ใช้หยุดพิมพ์ไปสักระยะเวลาหนึ่ง.
+ปรับปรุงประสิทธิภาพ: โดยเฉพาะอย่างยิ่งในการทำงานที่ต้องการประสิทธิภาพ เช่น การเรียก API เพื่อค้นหาข้อมูล การลดจำนวนการเรียก API จะช่วยลดภาระงานบนเซิร์ฟเวอร์และทำให้การตอบสนองของแอปพลิเคชันเร็วขึ้น.
