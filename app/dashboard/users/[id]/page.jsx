@@ -36,15 +36,15 @@ const SigleUserPage = async ({ params }) => {
                     <textarea name="address" id="" placeholder={user.address}></textarea>
 
                     <label>Is Admin?</label>
-                    <select name="isAdmin" id="isAdmin" defaultValue={user.isAdmin}>
-                        <option value={true}>Yes</option>
-                        <option value={false}>No</option>
+                    <select name="isAdmin" id="isAdmin">
+                        <option value={true} selected={user.isAdmin}>Yes</option>
+                        <option value={false} selected={!user.isAdmin}>No</option>
                     </select>
 
                     <label>Is Active?</label>
                     <select name="isActive" id="isActive" defaultValue={user.isActive}>
-                        <option value={true}>Yes</option>
-                        <option value={false}>No</option>
+                        <option value={true} selected={user.isActive}>Yes</option>
+                        <option value={false} selected={!user.isActive}>No</option>
                     </select>
                     <button>Update</button>
                 </form>
